@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import re
 import subprocess
@@ -45,9 +46,6 @@ def full_scan(ip):
     with open(output_file, "r") as file:
         output = file.read()
         return output
-
-# Example usage
-# print(full_scan("127.0.0.1"))
 
 def main():
     ip = input("Enter the IP address: ")
