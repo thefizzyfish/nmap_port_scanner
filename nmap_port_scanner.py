@@ -25,7 +25,7 @@ def full_scan(ip):
     # get open ports from all_ports function
     open_ports = all_ports(ip)
     # Print number of open ports found
-    print(f"[*] Found {len(open_ports)} open ports on {ip}")
+    print(f"[*] Found {len(open_ports)} open ports on {ip}.")
     # check if no open ports are found
     if not open_ports:
         print("[-] No open ports found.")
@@ -38,7 +38,7 @@ def full_scan(ip):
     output_file = os.path.join(cwd, "full-scan.nmap")
     # run full nmap scan
     try:
-        print("Running service enumeration scan on open ports:", ports_str)
+        print("[*] Running service enumeration scan on open ports:", ports_str)
         subprocess.run(["nmap", "-p", ports_str, "-A", "-T4", "-oN", output_file, ip], stdout=subprocess.PIPE)
     except Exception as e:
         print(f"[-] An error occurred: {e}")
