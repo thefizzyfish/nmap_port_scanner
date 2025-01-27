@@ -38,6 +38,7 @@ def full_scan(ip):
     output_file = os.path.join(cwd, "full-scan.nmap")
     # run full nmap scan
     try:
+        print("Running service enumeration scan on open ports:", ports_str)
         subprocess.run(["nmap", "-p", ports_str, "-A", "-T4", "-oN", output_file, ip], stdout=subprocess.PIPE)
     except Exception as e:
         print(f"[-] An error occurred: {e}")
